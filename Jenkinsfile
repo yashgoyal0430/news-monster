@@ -16,7 +16,6 @@ pipeline {
     stage('Install Dependency') {
       steps {
         sh "npm ci"
-        stash name: "jar-artifacts", includes: "target/*.jar"
       }
     }
 
