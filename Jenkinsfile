@@ -24,5 +24,12 @@ pipeline {
        sh "npm run build"
      }
    }
+
+   stage('Artifacts'){
+     steps {
+       archiveArtifacts artifacts: "dist/**", fingerprint: true
+     }
+   }
+    
   }
 }
